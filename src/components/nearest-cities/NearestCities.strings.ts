@@ -1,3 +1,3 @@
 export const stringsValues = {
-  title: 'Nearest Cities:',
+  title: 'Nearest Cities to',
 };
