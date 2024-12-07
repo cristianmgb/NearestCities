@@ -4,7 +4,7 @@ import {colors} from '../../shared/styles/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    gap: spacing['s-5'],
+    gap: spacing['s-4'],
     padding: spacing['s-4'],
     backgroundColor: colors.white,
   },
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     marginBottom: spacing['s-2'],
   },
   img: {
-    width: 220,
+    width: 250,
     resizeMode: 'contain',
   },
   section: {

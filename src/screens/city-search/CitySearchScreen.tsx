@@ -1,14 +1,13 @@
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
-import {SearchInput} from '../../components/search-input/SearchInput';
-import {CityList} from '../../components/city-list/CityList';
-import {useCitySearch} from '../../hooks/useCitySearch';
-import {City} from '../../components/city-list/CityList.interface';
-import {AppNavigatorParams} from '../../navigation/AppNavigator.interface';
+import {SafeAreaView, StatusBar, View} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {commonStyle} from '../../shared/styles/common';
-import {Title} from '../../components/title/Title';
+import {colors} from '@/shared/styles/colors';
+import {AppNavigatorParams} from '@/navigation/AppNavigator.interface';
+import {useCitySearch} from '@/hooks/useCitySearch';
+import {commonStyle} from '@/shared/styles/common';
 import {styles} from './CitySearchScreen.styles';
+import {City} from '@/components/city-list/CityList.interface';
+import {CityList, SearchInput, Title} from '@/components';
 
 type Props = NativeStackScreenProps<AppNavigatorParams, 'CitySearchScreen'>;
 
@@ -22,6 +21,11 @@ export const CitySearchScreen = ({navigation}: Props) => {
 
   return (
     <SafeAreaView style={commonStyle.container}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.white}
+        animated
+      />
       <View style={styles.content}>
         <Title style={styles.title}>Nearest Cities</Title>
         <View>
