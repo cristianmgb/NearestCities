@@ -13,8 +13,6 @@ export const HeaderNavigation = (props: NativeStackHeaderProps) => {
     options: {headerTitle, headerRight, freezeOnBlur, headerBackVisible = true},
   } = props;
 
-  console.log(headerTitle);
-
   const enableBlur = freezeOnBlur !== undefined ? freezeOnBlur : false;
 
   const renderHeaderRight = () => {
