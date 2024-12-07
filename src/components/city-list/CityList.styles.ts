@@ -4,12 +4,20 @@ import {spacing} from '../../shared/styles/spacing';
 
 export const styles = StyleSheet.create({
   cityItem: {
-    padding: spacing['s-3'],
-    backgroundColor: colors.white,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: spacing['s-4'],
+    backgroundColor: colors.lineColor,
     borderRadius: spacing['s-2'],
     marginBottom: spacing['s-2'],
   },
+  contentItem: {
+    flexDirection: 'row',
+    gap: spacing['s-2'],
+  },
   cityText: {
-    fontSize: spacing['s-4'],
+    fontSize: 18,
+    color: colors.fontColor,
   },
 });

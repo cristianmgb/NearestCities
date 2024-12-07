@@ -11,6 +11,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({query, onChange}) => {
       placeholder={stringsValues.placeholder}
       value={query}
       onChangeText={onChange}
+      autoFocus={true}
     />
   );
 };
