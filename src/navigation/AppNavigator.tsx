@@ -4,12 +4,16 @@ import {CitySearchScreen} from '../screens/city-search/CitySearchScreen';
 import {NearestCitiesScreen} from '../screens/nearest-cities/NearestCitiesScreen';
 import {AppNavigatorParams} from './AppNavigator.interface';
 import {RoutersScreens} from './routes';
+import {HeaderNavigation} from '@/components/header-navigation/HeaderNavigation';
 
 const Stack = createNativeStackNavigator<AppNavigatorParams>();
 
 const AppNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        header: HeaderNavigation,
+      }}>
       <Stack.Screen
         name={RoutersScreens.CitySearchScreen}
         component={CitySearchScreen}
@@ -18,7 +22,9 @@ const AppNavigator = () => {
       <Stack.Screen
         name={RoutersScreens.NearestCitiesScreen}
         component={NearestCitiesScreen}
-        options={{headerShown: false}}
+        options={{
+          headerShown: true,
+        }}
       />
     </Stack.Navigator>
   );
