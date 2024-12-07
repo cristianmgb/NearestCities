@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import citiesData from '../assets/cities.json';
 import {calculateDistance} from '../shared/utils/geoUtils';
+import {useAppDispatch} from '../shared/redux/hooks';
+import {setNearestCities} from '../shared/redux/features/nearestCitiesSlice';
 
 interface City {
   country: string;
@@ -15,9 +17,9 @@ export interface NearestCity {
 }
 
 export const useCitySearch = () => {
+  const dispatch = useAppDispatch();
   const [query, setQuery] = useState('');
   const [filteredCities, setFilteredCities] = useState<City[]>([]);
-  const [nearestCities, setNearestCities] = useState<NearestCity[]>([]);
 
   const cities: City[] = citiesData;
 
@@ -44,9 +46,9 @@ export const useCitySearch = () => {
         ),
       }))
       .sort((a, b) => a.distance - b.distance)
-      .slice(1, 5); // Omitir la ciudad seleccionada
-    setNearestCities(distances);
+      .slice(1, 5);
+    dispatch(setNearestCities({cities: distances, selectedCity}));
   };
 
-  return {query, setQuery, filteredCities, nearestCities, findNearestCities};
+  return {query, setQuery, filteredCities, findNearestCities};
 };
