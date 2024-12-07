@@ -8,7 +8,7 @@ export const commonStyle = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: spacing['s-4'],
+    paddingHorizontal: spacing['s-4'],
     backgroundColor: colors.white,
   },
 });

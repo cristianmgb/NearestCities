@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import {NearestCities} from '../../components/nearest-cities/NearestCities';
-import {commonStyle} from '../../shared/styles/common';
+import {NearestCities} from '@/components';
+import {commonStyle} from '@/shared/styles/common';
 
 export const NearestCitiesScreen = () => {
   return (
