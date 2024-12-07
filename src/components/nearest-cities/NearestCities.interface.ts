@@ -6,6 +6,6 @@ export interface NearestCity {
 }
 
 export interface NearestCitiesProps {
-  cities: NearestCity[];
-  selectedCity: City;
+  cities?: NearestCity[];
+  selectedCity?: City;
 }

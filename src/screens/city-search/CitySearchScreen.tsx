@@ -11,12 +11,11 @@ import {commonStyle} from '../../shared/styles/common';
 type Props = NativeStackScreenProps<AppNavigatorParams, 'CitySearchScreen'>;
 
 export const CitySearchScreen = ({navigation}: Props) => {
-  const {query, setQuery, filteredCities, findNearestCities, nearestCities} =
-    useCitySearch();
+  const {query, setQuery, filteredCities, findNearestCities} = useCitySearch();
 
   const handleSelectCity = (city: City) => {
     findNearestCities(city);
-    navigation.navigate('NearestCitiesScreen', {nearestCities, city});
+    navigation.navigate('NearestCitiesScreen');
   };
 
   return (

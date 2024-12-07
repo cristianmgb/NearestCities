@@ -3,11 +3,11 @@ import {Text, View} from 'react-native';
 import {NearestCitiesProps} from './NearestCities.interface';
 import {styles} from './NearestCities.styles';
 import {stringsValues} from './NearestCities.strings';
+import {useAppSelector} from '../../shared/redux/hooks';
+import {nearestCitiesSelector} from '../../shared/redux/features/nearestCities.selectors';
 
-export const NearestCities: React.FC<NearestCitiesProps> = ({
-  cities,
-  selectedCity,
-}) => {
+export const NearestCities: React.FC<NearestCitiesProps> = () => {
+  const {cities, selectedCity} = useAppSelector(nearestCitiesSelector);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
